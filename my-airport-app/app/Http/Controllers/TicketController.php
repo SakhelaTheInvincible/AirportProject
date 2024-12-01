@@ -81,12 +81,4 @@ class TicketController extends Controller
         return back()->with('success', "You have successfully purchased {$request->quantity} ticket(s).");
     }
 
-    // public function index()
-    // {
-    //     $tickets = Ticket::with(['users' => function ($query) {
-    //         $query->select('users.id', 'email');
-    //     }])->paginate(10);
-    
-    //     return view('admin.tickets', compact('tickets'));
-    // }
 }
