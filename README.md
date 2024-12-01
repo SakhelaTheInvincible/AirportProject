@@ -11,7 +11,7 @@ composer install
 npm install
 cp .env.example .env  
 
-now for .env file change this settings:
+now for .env file update these settings:
 
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
@@ -19,6 +19,16 @@ DB_PORT=5432
 DB_DATABASE=my_airport_app
 DB_USERNAME=postgres
 DB_PASSWORD=password
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=giorgisaxelashvili580@gmail.com
+MAIL_PASSWORD=vzckqrxqnsjcosda
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=giorgisaxelashvili580@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+
 
 (This app uses Postgres, so if possible add password to your postgres database,
 in PgAdmin4 do this: in Login/Group Roles select postgres properties, in Definition tab set password, use that password in DB_Password)
