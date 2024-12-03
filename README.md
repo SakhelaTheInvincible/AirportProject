@@ -35,7 +35,10 @@ in PgAdmin4 do this: in Login/Group Roles select postgres properties, in Definit
 
 after that run these commands:  
 php artisan key:generate  
-npm run build   
+npm run build
+php artisan migrate   
+php artisan db:seed    
+
 
 To build and run the code:
 php artisan serve    
