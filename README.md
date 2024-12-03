@@ -1,6 +1,6 @@
 This is Airport Laravel App
 
-To run project start by running Backend services first.
+To run the project:
 
 Clone repository,
 
@@ -31,7 +31,8 @@ MAIL_FROM_NAME="${APP_NAME}"
 
   
 (This app uses Postgres, so if possible add password to your postgres database,
-in PgAdmin4 do this: in Login/Group Roles select postgres properties, in Definition tab set password, use that password in DB_Password)
+in PgAdmin4 do this: in Login/Group Roles select postgres properties, in Definition tab set password, use that password in DB_Password,
+Also In PhP directory (php.ini) remove ";" for extension=pdo_pgsql and extension=pgsql)
 
 after that run these commands:  
 php artisan key:generate  
@@ -49,3 +50,5 @@ php artisan cache:clear
 php artisan optimize:clear  
   
 php artisan serve    
+
+Enjoy :)
