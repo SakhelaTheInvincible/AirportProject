@@ -41,13 +41,19 @@ Route::get('/login', function () {
     if (Auth::check()) {
         return redirect()->route('homepage');
     }
-    return view('auth.login'); // Or the inertia equivalent
+    return view('auth.login');
 })->name('login');
 
+
+
 // authentifications
+
+Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
+Route::get('/tickets/search', [TicketController::class, 'search'])->name('tickets.search');
+
+
 Route::middleware(['auth'])->group(function () {
-    Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
-    Route::get('/tickets/search', [TicketController::class, 'search'])->name('tickets.search');
+
 
     // verified users
     Route::middleware(['verified'])->group(function () {
@@ -58,10 +64,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/tickets/buy', [TicketController::class, 'buy'])->name('tickets.buy');
     });
 
-    // admin
-    // Route::middleware(['admin'])->group(function () {
-    //     Route::get('/admin/tickets', [TicketController::class, 'index'])->name('admin.tickets');
-    // });
+
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/admin/tickets', function () {

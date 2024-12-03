@@ -10,6 +10,7 @@ class LoginController extends Controller
 {  
     use AuthenticatesUsers;  
     
+    
     protected function sendLoginResponse(Request $request)  
     {  
         $request->session()->regenerate();  
